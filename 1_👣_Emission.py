@@ -31,7 +31,7 @@ def nav_page(page_name, timeout_secs=300):
 
 #emisson factors for india
 EMMISION_FACTOR = {
-    "India 🇮🇳" :{
+    "India" :{
         "Transportation": 0.14,
         "Electricity": 0.82,
         "Food": 1.25,
@@ -51,35 +51,35 @@ st.markdown(
 """,
     unsafe_allow_html=True,
 )
-st.title('🍂Carbon Emission Calculator')
+st.title('Carbon Emission Calculator')
 
 #Input Values for data collection and calculation 
 
-st.subheader(" 🌏 Select your country ")
-country = st.selectbox("Select", ["India 🇮🇳"])
+st.subheader("Select your country ")
+country = st.selectbox("Select", ["India"])
 
 
 col1, col2 = st.columns(2)
 
 with col1:
-    st.subheader("👨‍👩‍👧 Total Family members")
+    st.subheader("Total Family members")
     members = st.number_input('No. of members', min_value= 1, step=1)
 
-    st.subheader("🚙 Daily Commute Distance ")
+    st.subheader("Daily Commute Distance ")
     distance = st.number_input('in km',key = "distance_travelled",min_value=0, step=1)
 
-    st.subheader("⚡️ Monthly electricity usage")
+    st.subheader("Monthly electricity usage")
     electricity = st.number_input('In Kwh', key = "electricity_usage",min_value=0, step=1)
 
 with col2:
 
-    st.subheader("🍛 Daily Meals")
+    st.subheader("Daily Meals")
     food = st.number_input('Whole Family (no. of plates)', key = "Daily_meals",min_value=0, step=1)
 
-    st.subheader("🚿 Daily water use(approx)")
+    st.subheader("Daily water use(approx)")
     water = st.number_input('In litres', key = "water_usage",min_value=0, step=1)
 
-    st.subheader("🗑️ Daily waste (approx)")
+    st.subheader("Daily waste (approx)")
     waste = st.number_input('In kg', key = "waste_produced",min_value=0, step=1)
 
 #converting units to Yearly Values
@@ -124,11 +124,11 @@ Per_Person_emission = round(
 
        
 #Creating sessions states to store value of variables across web pages temporarily
-st.session_state.trans = (f"🚙 Transportation: {transport_emission} Tonnes of Co2 / year")
-st.session_state.food = (f"🍛 Food: {food_emission} Tonnes of Co2 / year")
-st.session_state.water = (f"🚿 Water: {water_emission} Tonnes of Co2 / year")
-st.session_state.waste = (f"🗑️ Waste: {waste_emission} Tonnes of Co2 / year")
-st.session_state.elec = (f"⚡️ Electricity: {electricity_emission} Tonnes of Co2 / year")
+st.session_state.trans = (f"Transportation: {transport_emission} Tonnes of Co2 / year")
+st.session_state.food = (f"Food: {food_emission} Tonnes of Co2 / year")
+st.session_state.water = (f"Water: {water_emission} Tonnes of Co2 / year")
+st.session_state.waste = (f"Waste: {waste_emission} Tonnes of Co2 / year")
+st.session_state.elec = (f"Electricity: {electricity_emission} Tonnes of Co2 / year")
 
 st.session_state.total = (f"Total Carbon Footprint: {Total_Emissions} Tonnes of Co2 / Year")
 st.session_state.per_person = (f"Emission Per Person:{Per_Person_emission} Tonnes of Co2 / year")
