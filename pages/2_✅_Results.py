@@ -65,7 +65,6 @@ with col2:
     st.warning('Your Emissions are more than national Average!')
  else:
     st.success('Your Emissions are less than national Average!', icon="✅")
-    st.balloons()
  st.warning("In India average Co2 emission per capita is 2.29 tonnes per year")
  st.warning("In World average Co2 emission per capita is 4.70 tonnes per year")
 
