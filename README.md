@@ -5,6 +5,6 @@ Carbon Emission Calculator for Household and Individual Level
  ReadME.md
  MAIN code file:
   -Pages(Other pages for webapp)
-    |-Results.py
-    |-Learn_more.py
+    -Results.py
+    -Learn_more.py
    - Emissions.py
